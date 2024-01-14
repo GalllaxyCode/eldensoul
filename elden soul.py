@@ -129,7 +129,17 @@ def FinalBoss():
 
 def Story():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("\nThis content is under the development!")
+    print("\nThe erd tree...")
+    time.sleep(2)
+    print("\nthe most powerful source of energy in this world")
+    time.sleep(2)
+    print("\nis now...")
+    time.sleep(3)
+    print("   ________  ______  _____ __________ \n  / ____/ / / / __ \/ ___// ____/ __ \\\n / /   / / / / /_/ /\__ \/ __/ / / / /\n/ /___/ /_/ / _, _/___/ / /___/ /_/ / \n\____/\____/_/ |_|/____/_____/_____/  \n                                      ")
+    time.sleep(2)
+    print("The Holy Knight Ormon is invading you!")
+    time.sleep(1)
+    print("Prepare to fight!")
     input("Press Enter to return...")
     SelectGameMode()
 
