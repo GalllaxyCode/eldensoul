@@ -83,4 +83,10 @@ def FinalBoss():
         time.sleep(1)
         print(f"\nPrepare to fight {finalbossentitylist[2]}!")
 
+def Story():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("\nThis content is under the development!")
+    input("Press Enter to return...")
+    SelectGameMode()
+
 game_start()
