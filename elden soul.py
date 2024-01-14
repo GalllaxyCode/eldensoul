@@ -26,18 +26,19 @@ def SelectGameMode():
     print("\nSelect the gamemode:")
     time.sleep(1)
     print("Story    FinalBoss    Settings    Credits")
-    selection = input()
-    if selection == "Story":
-        Story()
-    elif selection == "FinalBoss":
-        FinalBoss()
-    elif selection == "Settings":
-        Settings()
-    elif selection == "Credits":
-        Credits()
-    else:
-        time.sleep(2)
-        print("Wrong input, try again")
+    while(True):
+        selection = input()
+        if selection == "Story":
+            Story()
+        elif selection == "FinalBoss":
+            FinalBoss()
+        elif selection == "Settings":
+            Settings()
+        elif selection == "Credits":
+            Credits()
+        else:
+            time.sleep(2)
+            print("Wrong input, try again")
 
 
 def Credits():
@@ -48,22 +49,51 @@ def Credits():
     input("Press Enter to return...")
     SelectGameMode()
 
-diff = ["Easy", "Normal", "Hard", "Impossible"]
-Difficulty = diff[2]
-gameclass = ["wretch"]
-Class = gameclass[0]
-finalbossentitylist = ["Morgott, The Omen King", "Godfrey, First Elden Lord", "Maliketh, The Black Blade", "Malenia, Blade Of Miquella"]
-
-def Settings():
+class SettingsClass():
     diff = ["Easy", "Normal", "Hard", "Impossible"]
-    Difficulty = diff[2]
+    Difficulty = diff[3]
     gameclass = ["wretch"]
     Class = gameclass[0]
+    finalbossentitylist = ["Morgott, The Omen King", "Godfrey, First Elden Lord", "Maliketh, The Black Blade", "Malenia, Blade Of Miquella"]
+    def __init__(self, difficulty, mode):
+        self.Difficulty = difficulty
+        self.Class = mode
+
+p1 = SettingsClass("Impossible", "wretch")
+
+def Settings():
     os.system('cls' if os.name == 'nt' else 'clear')
     time.sleep(2)
-    print(f"Difficulty = {Difficulty}\nClass = {Class}")
-    input("Press Enter to return...")
+    print(f"Difficulty = {p1.Difficulty}\nClass = {p1.Class}")
+    time.sleep(1)
+    print("\nType setting you want to change...")
+    select = input()
+    if select == "Difficulty":
+        DifficultyChange()
+    elif select == "Class":
+        ClassChange()
     SelectGameMode()
+
+def DifficultyChange():
+    print("Select and write on of these:")
+    print(SettingsClass.diff)
+    selectDifficulty = input()
+    if selectDifficulty == "Easy":
+        p1.__init__(SettingsClass.diff[0], p1.Class)
+    elif selectDifficulty == "Normal":
+        p1.__init__(SettingsClass.diff[1], p1.Class)
+    elif selectDifficulty == "Hard":
+        p1.__init__(SettingsClass.diff[2], p1.Class)
+    elif selectDifficulty == "Impossible":
+        p1.__init__(SettingsClass.diff[3], p1.Class)
+    else:
+        print("Wrong input, try again.")
+    Settings()
+
+def ClassChange():
+    print("This option is under development!")
+    time.sleep(2)
+    Settings()
 
 def FinalBoss():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -74,14 +104,28 @@ def FinalBoss():
     time.sleep(2)
     print("I'll test you right now, the last test")
     time.sleep(2)
-    if Difficulty == diff[1]:
-        print("I AM GODFREY, THE FIRST ELDEN LORD")
+    if p1.Difficulty == "Easy":
+        print(f"I'm {SettingsClass.finalbossentitylist[0]}")
         time.sleep(1)
-        print(f"\nPrepare to fight {finalbossentitylist[1]}!")
-    elif Difficulty == diff[2]:
-        print(f"I'm {finalbossentitylist[2]}")
+        print('\nHave it writ upon thy meagre grave:\n"Felled by King Morgott! Last of all kings."')
         time.sleep(1)
-        print(f"\nPrepare to fight {finalbossentitylist[2]}!")
+        print(f"\nPrepare to fight {SettingsClass.finalbossentitylist[0]}!")
+    elif p1.Difficulty == "Normal":
+        print("I'm {SettingsClass.finalbossentitylist[1]}")
+        time.sleep(1)
+        print(f"\nPrepare to fight {SettingsClass.finalbossentitylist[1]}!")
+    elif p1.Difficulty == "Hard":
+        print(f"I'm {SettingsClass.finalbossentitylist[2]}")
+        time.sleep(1)
+        print("Cower before Maliketh, Marika’s Black Blade")
+        time.sleep(1)
+        print(f"\nPrepare to fight {SettingsClass.finalbossentitylist[2]}!")
+    elif p1.Difficulty == "Impossible":
+        print(f"\nI'm {SettingsClass.finalbossentitylist[3]}")
+        time.sleep(1)
+        print("\nAnd i have never known defeat")
+        time.sleep(1)
+        print(f"\nPrepare to fight {SettingsClass.finalbossentitylist[3]}!")
 
 def Story():
     os.system('cls' if os.name == 'nt' else 'clear')
