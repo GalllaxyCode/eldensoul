@@ -1,5 +1,7 @@
 import time
 import os
+from entities import *
+from mechanics import *
 
 def link(uri, label=None):
     if label is None: 
@@ -137,10 +139,9 @@ def Story():
     time.sleep(3)
     print("   ________  ______  _____ __________ \n  / ____/ / / / __ \/ ___// ____/ __ \\\n / /   / / / / /_/ /\__ \/ __/ / / / /\n/ /___/ /_/ / _, _/___/ / /___/ /_/ / \n\____/\____/_/ |_|/____/_____/_____/  \n                                      ")
     time.sleep(2)
-    print("The Holy Knight Ormon is invading you!")
+    print("The Evil Dog is invading you!")
     time.sleep(1)
     print("Prepare to fight!")
-    input("Press Enter to return...")
-    SelectGameMode()
+    StartBattle()
 
 game_start()

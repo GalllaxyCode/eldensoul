@@ -9,6 +9,8 @@ def StartBattle():
     player2 = EvilDog
     Battle()
 
+
+
 def Battle(player1, player2):
     while (player1.hp or player2.hp > 0):
         print("Choose an action to perform!")
@@ -43,6 +45,6 @@ def EvadeP1():
 def UseMagicP1():
     # makes you use magic if you have spells
     print()
-    
+
 def AttackP2(player1, player2):
     player1.hp = player2.attack / player1.armor
