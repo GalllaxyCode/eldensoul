@@ -4,9 +4,9 @@ from entities import *
 from eldensoul import *
 
 
-def StartBattle():
-    player1 = MainHeroEasy
-    player2 = EvilDog
+def StartBattle(chs1, chs2):
+    player1 = chs1
+    player2 = chs2
     Battle()
 
 
