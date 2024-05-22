@@ -4,12 +4,6 @@ from entities import *
 from eldensoul import *
 
 
-def StartBattle(chs1, chs2):
-    player1 = chs1
-    player2 = chs2
-    Battle()
-
-
 
 def Battle(player1, player2):
     while (player1.hp or player2.hp > 0):

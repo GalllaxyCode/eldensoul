@@ -113,7 +113,7 @@ def FinalBoss():
         time.sleep(1)
         print(f"\nPrepare to fight {SettingsClass.finalbossentitylist[0]}!")
     elif p1.Difficulty == "Normal":
-        print("I'm {SettingsClass.finalbossentitylist[1]}")
+        print(f"I'm {SettingsClass.finalbossentitylist[1]}")
         time.sleep(1)
         print(f"\nPrepare to fight {SettingsClass.finalbossentitylist[1]}!")
     elif p1.Difficulty == "Hard":
@@ -142,6 +142,10 @@ def Story():
     print("The Evil Dog is invading you!")
     time.sleep(1)
     print("Prepare to fight!")
-    StartBattle()
+    time.sleep(1)
+    #Entity.PrintEntityAttributes(p1)
+    #player1 = p1
+    #player2 = EvilDog
+    #Battle(player1, player2)
 
 game_start()
